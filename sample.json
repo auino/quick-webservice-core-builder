@@ -1,0 +1,68 @@
+{
+	"version": 0.1,
+	"log": {
+		"language": "python",
+		"enabled": false,
+		"bindaddress": "127.0.0.1",
+		"domainname": "log.foo.com",
+		"ssl": false,
+		"listeningport": 8000
+	},
+	"modules": [
+		{
+			"name": "A",
+			"server": {
+				"language": "python",
+				"listeningport": 8080,
+				"bindaddress": "0.0.0.0",
+				"domainname": "a.foo.com",
+				"ssl": false,
+				"methods_uri": [ "b2a", "c2a" ]
+			}
+		},
+		{
+			"name": "B",
+			"server": {
+				"language": "python",
+				"listeningport": 8081,
+				"bindaddress": "127.0.0.1",
+				"domainname": "b.foo.com",
+				"ssl": false,
+				"methods_uri": [ "a2b", "c2b" ]
+			}
+		},
+		{
+			"name": "C",
+			"server": {
+				"language": "python",
+				"listeningport": 8082,
+				"bindaddress": "127.0.0.1",
+				"domainname": "c.foo.com",
+				"ssl": false,
+				"methods_uri": [ "a2c", "b2c" ]
+			}
+		}
+	],
+	"interactions": [
+		{
+			"name": "a2b_interaction",
+			"sender": "A",
+			"recipient": "B",
+			"method_uri": "a2b",
+			"sampledata": {
+				"sent": {"foo":"a2b_data_sent"},
+				"received": {"foo":"a2b_data_received"}
+			}
+		},
+		{
+			"name": "b2c_interaction",
+			"sender": "B",
+			"recipient": "C",
+			"method_uri": "b2c",
+			"sampledata": {
+				"sent": {"foo":"b2c_data_sent"},
+				"received": {"foo":"b2c_data_received"}
+			}
+		}
+	]
+}
