@@ -68,8 +68,8 @@ The Python builder allows you to create modules core code for the [Python](https
 
 Essentially, any support is welcome.
 You can contribute to the project in two ways:
- * by enhancing the current version of the program
- * by implementing additional builders for additional programming languages
+ * By enhancing the current version of the program
+ * By implementing additional builders for additional programming languages
 
 ### Contacts ###
 
