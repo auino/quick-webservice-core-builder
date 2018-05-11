@@ -19,9 +19,9 @@ Essentially, you define the core components of the system and how they interact.
 ### Usage instructions ###
 
 Let's suppose you want to create a simple system composed of three components `A`, `B` and `C` and by interacting as follows (see a sample [architecture](https://www.websequencediagrams.com/?lz=dGl0bGUgU2FtcGxlIHByb2dyYW0KCkEtPkI6IGEyYgpCLT5DOiBiMmMKQy0-QTogYzJh&s=default)):
- * `A` interacts with `B`, through the `a2b` REST API method
- * `B` interacts with `C`, through the `b2c` REST API method
- * `C` interacts with `A`, through the `c2a` REST API method
+ * `A` interacts with `B`, through the `a2b` REST API method provided by `B`
+ * `B` interacts with `C`, through the `b2c` REST API method provided by `C`
+ * `C` interacts with `A`, through the `c2a` REST API method provided by `A`
 
 In this case, it is required to formally define the structure of the system, through a dedicated JSON file (see the [sample.json](https://github.com/auino/quick-webservice-base-builder/blob/master/sample.json) file).
 Such file includes all the core information of the system.
