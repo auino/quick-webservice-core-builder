@@ -10,6 +10,7 @@ Essentially, you define the core components of the system and how they interact.
 ### Features ###
 
  * Quicker PoC implementation
+ * REST API support
  * Easily extensible
  * Platform independent
  * Logging capabilities
