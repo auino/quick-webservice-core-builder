@@ -30,10 +30,10 @@ In addition, a component to automatically log all components interactions may be
 
 #### Installation ####
 
-Just clone the repository.
+Just clone the repository:
 
 ```
-git clone https://github.com/auino/500px-osx-background.git
+git clone https://github.com/auino/quick-webservice-base-builder.git
 ```
 
 #### Configuration ####
@@ -42,7 +42,7 @@ Just copy and edit the [sample.json](https://github.com/auino/quick-webservice-b
 
 #### Execution ####
 
-Just run a shell command like the following one.
+Just run a shell command like the following one:
 
 ```
 python builder.py sample.json /tmp/out/
