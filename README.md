@@ -17,7 +17,7 @@ Essentially, you define the core components of the system and how they interact.
 
 ### Usage instructions ###
 
-Let's suppose you want to create a simple system composed of three components `A`, `B` and `C` and by interacting as follows (see [architecture](https://www.websequencediagrams.com/?lz=dGl0bGUgU2FtcGxlIHByb2dyYW0KCkEtPkI6IGEyYgpCLT5DOiBiMmMKQy0-QTogYzJh&s=default)):
+Let's suppose you want to create a simple system composed of three components `A`, `B` and `C` and by interacting as follows (see a sample [architecture](https://www.websequencediagrams.com/?lz=dGl0bGUgU2FtcGxlIHByb2dyYW0KCkEtPkI6IGEyYgpCLT5DOiBiMmMKQy0-QTogYzJh&s=default)):
  * `A` interacts with `B`, through the `a2b` REST API method
  * `B` interacts with `C`, through the `b2c` REST API method
  * `C` interacts with `A`, through the `c2a` REST API method
