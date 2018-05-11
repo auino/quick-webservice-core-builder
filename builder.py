@@ -21,7 +21,7 @@ def createmoduleproject(outputdirectory, module, version, logmodule=None):
 	# module project directory creation/initialization
 	foldername = 'log'
 	if logmodule != None: foldername = getfoldername(module)
-	res_makedir = libname.builder_makedirectory(outputdirectory, foldername, (logmodule!=None))
+	res_makedir = libname.builder_initializeprogram(outputdirectory, foldername, module.get('ssl'))
 	# writing module code
 	res_writecode = libname.builder_writecode(outputdirectory, module, version, logmodule)
 	return [res_makedir, res_writecode]

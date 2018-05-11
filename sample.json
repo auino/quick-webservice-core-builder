@@ -2,7 +2,7 @@
 	"version": 0.1,
 	"log": {
 		"language": "python",
-		"enabled": false,
+		"enabled": true,
 		"bindaddress": "127.0.0.1",
 		"domainname": "log.foo.com",
 		"ssl": false,
@@ -17,7 +17,7 @@
 				"bindaddress": "0.0.0.0",
 				"domainname": "a.foo.com",
 				"ssl": false,
-				"methods_uri": [ "b2a", "c2a" ]
+				"methods_uri": [ "c2a" ]
 			}
 		},
 		{
@@ -28,7 +28,7 @@
 				"bindaddress": "127.0.0.1",
 				"domainname": "b.foo.com",
 				"ssl": false,
-				"methods_uri": [ "a2b", "c2b" ]
+				"methods_uri": [ "a2b" ]
 			}
 		},
 		{
@@ -39,7 +39,7 @@
 				"bindaddress": "127.0.0.1",
 				"domainname": "c.foo.com",
 				"ssl": false,
-				"methods_uri": [ "a2c", "b2c" ]
+				"methods_uri": [ "b2c" ]
 			}
 		}
 	],
@@ -62,6 +62,16 @@
 			"sampledata": {
 				"sent": {"foo":"b2c_data_sent"},
 				"received": {"foo":"b2c_data_received"}
+			}
+		},
+		{
+			"name": "c2a_interaction",
+			"sender": "C",
+			"recipient": "A",
+			"method_uri": "c2a",
+			"sampledata": {
+				"sent": {"foo":"c2a_data_sent"},
+				"received": {"foo":"c2a_data_received"}
 			}
 		}
 	]
