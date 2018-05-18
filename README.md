@@ -64,6 +64,11 @@ The Python builder allows you to create modules core code for the [Python](https
  * Outgoing methods are implemented by never called from the programs. Therefore, you have to implement your logic on the generated programs in order to make them appear.
  * The `DEBUG` variable (default to `True`) overrides sent/received data with sample data specified in the input JSON file. In order to avoid the override, set the variable to `False`.
 
+### Next TODOs ###
+
+ * Implement [Node.js](https://nodejs.org) builder
+ * Support to output sequence diagram script creation, compatible with [PlantUML](http://plantuml.com)
+
 ### Contribute ###
 
 Essentially, any support is welcome.
