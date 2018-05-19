@@ -1,9 +1,11 @@
 # {{{METHODNAME}}} outgoing request
 def {{{METHODNAME}}}request(data):
 	url = '{{{URL}}}'
-	# TODO: remove the following line
+	# overriding request object
 	if DEBUG: data = {{{SENTDATA}}}
+	# making the remote request
 	res = remotepostrequest(url, data)
-	# TODO: remove the following line
+	# overriding response object
 	if DEBUG: res = {{{RECEIVEDDATA}}}
+	# method return object
 	return res

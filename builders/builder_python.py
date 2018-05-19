@@ -1,4 +1,9 @@
 import os
+import os.path
+
+import sys
+sys.path.insert(0, '../')
+
 from utils import getfoldername, getfullpathname, getserverurl, loadfilecontent, writetofile
 
 # creates the main directory (including basic content) of a specific module
@@ -93,6 +98,22 @@ def builder_writecode(outputdirectory, module, version, logmodule=None):
 		methodcode = methodcode_in
 		for k in replacements: methodcode = methodcode.replace(k, str(replacements.get(k)))
 		incomingmethodscode += methodcode
+	# generating processing base code
+	processingfile = getfullpathname(outputdirectory, getfoldername(module), 'processing.py')
+	if os.path.isfile(processingfile):
+		# moving all processing file, for backup (will overwrite previous backup files)
+		os.rename(processingfile, processingfile+'_old')
+	method_processing = loadfilecontent('./builders/templates/python/method_processing.py')
+	processingcode = ''
+	for method in module.get('input_interactions'):
+		replacements = {
+			'{{{METHODNAME}}}': method
+		}
+		methodcode = method_processing
+		for k in replacements: methodcode = methodcode.replace(k, str(replacements.get(k)))
+		processingcode += methodcode
+	# writing processing file to output
+	writetofile(outputdirectory, getfoldername(module), 'processing.py', processingcode)
 	# generating main server program implementation
 	servercode = loadfilecontent('./builders/templates/python/server.py')
 	replacements = {

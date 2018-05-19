@@ -1,9 +1,12 @@
 import sys
 import json
+from umlexport import exportuml
 
 sys.path.insert(0, './builders')
 
 from utils import getfoldername
+
+OUTPUTUMLFILENAME = 'diagram.puml'
 
 EXPECTEDARGS = 3
 
@@ -17,6 +20,7 @@ modelfilecontent = json.loads(modelfilecontent)
 
 outputdirectory = sys.argv[2]
 
+# creates the entire project code of a given module
 def createmoduleproject(outputdirectory, module, version, logmodule=None):
 	# module project directory creation/initialization
 	foldername = 'log'
@@ -66,3 +70,6 @@ for module in modelfilecontent.get('modules'):
 	libname = importlib.import_module(libname)
 	# module project creation
 	createmoduleproject(outputdirectory, module, version, logmodule)
+
+if modelfilecontent.get('exportuml'):
+	exportuml(modelfilecontent.get('interactions'), outputdirectory, '', OUTPUTUMLFILENAME)

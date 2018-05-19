@@ -1,5 +1,6 @@
 {
 	"version": 0.1,
+	"exportuml": true,
 	"log": {
 		"language": "python",
 		"enabled": true,

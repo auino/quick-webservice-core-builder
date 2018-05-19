@@ -1,13 +1,15 @@
 # {{{METHODNAME}}} view
 class {{{METHODNAME}}}view:
 	def POST(self):
+		# reading data
 		data = json.loads(web.data())
-		# TODO: remove the following line
+		# overriding request object
 		if DEBUG: data = {{{REQUESTDATA}}}
+		# storing incoming log
 		storeincominglog(COMPONENTNAME, '{{{METHODNAME}}}', data)
-		# ...
-		# TODO: process data
-		# ...
-		# TODO: remove the following line
+		# processing data
+		res = {{{METHODNAME}}}_process(data)
+		# overriding response object
 		if DEBUG: res = {{{RESPONSEDATA}}}
+		# returning answer
 		return jsonanswer(res)
