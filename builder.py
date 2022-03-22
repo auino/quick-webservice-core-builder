@@ -11,7 +11,7 @@ OUTPUTUMLFILENAME = 'diagram.puml'
 EXPECTEDARGS = 3
 
 if len(sys.argv) != EXPECTEDARGS:
-	print "Usage:", str(sys.argv[0]), "<model_file>", "<output_directory>"
+	print("Usage:", str(sys.argv[0]), "<model_file>", "<output_directory>")
 	sys.exit(0)
 
 modelfilename = sys.argv[1]
